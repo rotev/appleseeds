@@ -1,0 +1,2 @@
+module AddSectionToPagesHelper
+end

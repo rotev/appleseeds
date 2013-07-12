@@ -1,0 +1,13 @@
+%header
+  %ul.menu
+    - Section.where('show_in_main_menu=?', true).includes(:pages).each do |section|
+
+      %li.header_text.f_reg.narrower
+        = link_to section.name, section_path(section)
+        %ul
+          - section.pages.each do |page|
+            %li
+              = link_to page.title, page_path(section, page)
+
+  = link_to "עמוד הבית", root_path, id: 'logo'
+

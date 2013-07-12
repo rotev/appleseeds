@@ -1,0 +1,349 @@
+he:
+  date:
+    abbr_day_names:
+    - א
+    - ב
+    - ג
+    - ד
+    - ה
+    - ו
+    - ש
+    abbr_month_names:
+    - 
+    - יאנ
+    - פבר
+    - מרץ
+    - אפר
+    - מאי
+    - יונ
+    - יול
+    - אוג
+    - ספט
+    - אוק
+    - נוב
+    - דצמ
+    day_names:
+    - ראשון
+    - שני
+    - שלישי
+    - רביעי
+    - חמישי
+    - שישי
+    - שבת
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%e ב%B, %Y'
+      short: ! '%e %b'
+    month_names:
+    - 
+    - ינואר
+    - פברואר
+    - מרץ
+    - אפריל
+    - מאי
+    - יוני
+    - יולי
+    - אוגוסט
+    - ספטמבר
+    - אוקטובר
+    - נובמבר
+    - דצמבר
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: בערך שעה אחת
+        other: בערך %{count} שעות
+      about_x_months:
+        one: בערך חודש אחד
+        other: בערך %{count} חודשים
+      about_x_years:
+        one: בערך שנה אחת
+        other: בערך %{count} שנים
+      almost_x_years:
+        one: כמעט שנה
+        other: כמעט %{count} שנים
+      half_a_minute: חצי דקה
+      less_than_x_minutes:
+        one: פחות מדקה אחת
+        other: פחות מ- %{count} דקות
+        zero: פחות מדקה אחת
+      less_than_x_seconds:
+        one: פחות משניה אחת
+        other: פחות מ- %{count} שניות
+        zero: פחות משניה אחת
+      over_x_years:
+        one: מעל שנה אחת
+        other: מעל %{count} שנים
+      x_days:
+        one: יום אחד
+        other: ! '%{count} ימים'
+      x_minutes:
+        one: דקה אחת
+        other: ! '%{count} דקות'
+      x_months:
+        one: חודש אחד
+        other: ! '%{count} חודשים'
+      x_seconds:
+        one: שניה אחת
+        other: ! '%{count} שניות'
+    prompts:
+      day: יום
+      hour: שעה
+      minute: דקה
+      month: חודש
+      second: שניות
+      year: שנה
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: חייב באישור
+      blank: לא יכול להיות ריק
+      confirmation: לא תואם לאישורו
+      empty: לא יכול להיות ריק
+      equal_to: חייב להיות שווה ל- %{count}
+      even: חייב להיות זוגי
+      exclusion: לא זמין
+      greater_than: חייב להיות גדול מ- %{count}
+      greater_than_or_equal_to: חייב להיות גדול או שווה ל- %{count}
+      inclusion: לא נכלל ברשימה
+      invalid: לא תקין
+      less_than: חייב להיות קטן מ- %{count}
+      less_than_or_equal_to: חייב להיות קטן או שווה ל- %{count}
+      not_a_number: חייב להיות מספר
+      not_an_integer: חייב להיות מספר שלם
+      odd: חייב להיות אי זוגי
+      record_invalid: ! 'האימות נכשל: %{errors}'
+      taken: כבר בשימוש
+      too_long: "יותר מדי ארוך (לא יותר מ- %{count} תווים)"
+      too_short: "יותר מדי קצר (לא פחות  מ- %{count} תווים)"
+      wrong_length: "לא באורך הנכון (חייב להיות %{count} תווים)"
+    template:
+      body: ! 'אנא בדוק את השדות הבאים:'
+      header:
+        one: ! 'לא ניתן לשמור את ה%{model}: שגיאה אחת'
+        other: ! 'לא ניתן לשמור את ה%{model}: %{count} שגיאות.'
+  helpers:
+    select:
+      prompt: נא לבחור
+    submit:
+      create: ! '%{model} יצירת'
+      submit: ! '%{model} שמור'
+      update: ! '%{model} עדכון'
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u %n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: ₪
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: מיליארד
+          million: מיליון
+          quadrillion: קודריליון
+          thousand: אלף
+          trillion: טריליון
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: בייט
+            other: בתים
+          gb: ג'יגה-בייט
+          kb: קילו-בייט
+          mb: מגה-בייט
+          tb: טרה-בייט
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', את '
+      two_words_connector: ! ' את '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a %d %b %H:%M:%S %Z %Y'
+      long: ! '%d ב%B, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+      picker: ! '%a, %d %b %Y %H:%M:%S'
+    pm: pm
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    models:
+      page:
+        one: עמוד
+        other: עמודים
+      section:
+        one: חלק
+        other: חלקים
+      component:
+        one: רכיב
+        other: רכיבים
+      components_list:
+        one: רשימת רכיבים
+        other: רשימות רכיבים
+
+    attributes:
+      section:
+        name: שם
+        pages: עמודים
+      page:
+        title: כותרת
+        text: טקסט
+        page_template: טמפלייט
+
+    errors:
+      <<: *errors
+
+
+  active_scaffold:
+    add: Add
+    add_existing: Add Existing
+    add_existing_model: Add Existing %{model}
+    apply: Apply
+    are_you_sure_to_delete: Are you sure you want to delete %{label}?
+    cancel: Cancel
+    click_to_edit: Click to edit
+    click_to_reset: Click to reset
+    close: Close
+    config_list: Configure
+    config_list_model: Configure Columns for %{model}
+    create: Create
+    create_model: יצירת %{model}
+    create_another: יצירת %{model} נוסף
+    created_model: Created %{model}
+    create_new: יצירת חדש
+    customize: Customize
+    delete: מחיקה
+    deleted_model: Deleted %{model}
+    delimiter: Delimiter
+    download: Download
+    edit: עריכה
+    export: Export
+    nested_for_model: ! '%{nested_model} של %{parent_model}'
+    nested_of_model: ! '%{nested_model} of %{parent_model}'
+    'false': 'False'
+    filtered: (Filtered)
+    found: נמצאו
+    hide: Hide
+    inplace_edit_handle: --
+    live_search: Live Search
+    loading: Loading…
+    mark_all_records: Mark all
+    next: Next
+    no_entries: No Entries
+    no_options: no options
+    omit_header: Omit Header
+    options: Options
+    pdf: PDF
+    previous: Previous
+    print: Print
+    records_marked:
+      one: 1 marked %{model}
+      other: ! '%{count} marked %{model}'
+    refresh: Refresh
+    remove: Remove
+    remove_file: Remove or Replace file
+    replace_existing: Replace Existing
+    replace_with_new: Replace With New
+    revisions_for_model: Revisions for %{model}
+    reset: Reset
+    saving: Saving…
+    search: חיפוש
+    search_terms: Search Terms
+    _select_: ! '- select -'
+    show: הצגה
+    show_model: Show %{model}
+    _to_: ! ' to '
+    'true': 'True'
+    update: Update
+    update_model: Update %{model}
+    updated_model: Updated %{model}
+    =: =
+    ! '>=': ! '>='
+    <=: <=
+    ! '>': ! '>'
+    <: <
+    ! '!=': ! '!='
+    between: Between
+    contains: Contains
+    begins_with: Begins with
+    ends_with: Ends with
+    today: Today
+    yesterday: Yesterday
+    tomorrow: Tomorrow
+    this_week: This Week
+    prev_week: Last Week
+    next_week: Next Week
+    this_month: This Month
+    prev_month: Last Month
+    next_month: Next Month
+    this_year: This Year
+    prev_year: Last Year
+    next_year: Next Year
+    past: Past
+    future: Future
+    range: Range
+    seconds: Seconds
+    minutes: Minutes
+    hours: Hours
+    days: Days
+    weeks: Weeks
+    months: Months
+    years: Years
+    optional_attributes: Further Options
+    :null: 'Null'
+    not_null: Not Null
+    date_picker_options:
+      weekHeader: Wk
+      firstDay: 0
+      isRTL: false
+      showMonthAfterYear: false
+    datetime_picker_options:
+      closeText: Close
+      currentText: Now
+      timeText: Hour
+    human_conditions:
+      boolean: ! '%{column} = %{value}'
+      association: ! '%{column} = %{value}'
+    errors:
+      template:
+        header:
+          one: 1 error prohibited this %{model} from being saved.
+          other: ! '%{count} errors prohibited this %{model} from being saved'
+        body: ! 'There were problems with the following fields:'
+    cant_destroy_record: ! '%{record} can''t be destroyed'
+    internal_error: Request Failed (code 500, Internal Error)
+    version_inconsistency: Version inconsistency - this record has been modified since you started editing it.
+    record_not_saved: Failed to save record cause of an unknown error
+    no_authorization_for_action: No Authorization for action %{action}
+    'null': 'Null'

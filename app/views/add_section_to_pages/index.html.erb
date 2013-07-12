@@ -1,0 +1,23 @@
+<h1>Listing add_section_to_pages</h1>
+
+<table>
+  <tr>
+    <th>Section</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @add_section_to_pages.each do |add_section_to_page| %>
+  <tr>
+    <td><%= add_section_to_page.section_id %></td>
+    <td><%= link_to 'Show', add_section_to_page %></td>
+    <td><%= link_to 'Edit', edit_add_section_to_page_path(add_section_to_page) %></td>
+    <td><%= link_to 'Destroy', add_section_to_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Add section to page', new_add_section_to_page_path %>

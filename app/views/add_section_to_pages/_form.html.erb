@@ -1,0 +1,21 @@
+<%= form_for(@add_section_to_page) do |f| %>
+  <% if @add_section_to_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@add_section_to_page.errors.count, "error") %> prohibited this add_section_to_page from being saved:</h2>
+
+      <ul>
+      <% @add_section_to_page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :section_id %><br />
+    <%= f.number_field :section_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
