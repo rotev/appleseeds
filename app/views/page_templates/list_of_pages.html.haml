@@ -1,0 +1,19 @@
+
+= render partial: 'bread_crumbs'
+
+- container = @page ? @page : @section
+
+- container.pages.each do |page|
+	%article.clearfix
+		.image
+			= image_tag page.image.url()
+
+		.content
+			.text
+				- if page.title
+					%h1= page.title
+
+				- if page.text
+					= page.text.html_safe
+					
+			= link_to "לפרטים נוספים", aggregate_page_path(page)

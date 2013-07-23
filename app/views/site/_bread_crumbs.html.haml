@@ -1,0 +1,13 @@
+.bread_crumbs
+	= link_to @section.name, section_path(@section)
+
+	- if @page
+
+		-# Link to all parent pages
+		- parent_page = @page.parent_page
+		- while parent_page
+			= link_to parent_page.title, aggregate_page_path(parent_page)
+			- parent_page = parent_page.parent_page
+
+		-# Link to current page
+		= link_to @page.title, aggregate_page_path(@page)

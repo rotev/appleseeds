@@ -8,27 +8,82 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require fonts
+ *= require bjqs
  */
+
+
 
 @import "compass";
 @import "compass/reset";
 
+$page_width: 986px;
 
+
+.clearfix {
+	@include clearfix;
+}
 
 body {
 	direction: rtl;
-	font-family:MPR
+	font-family:MPR;
+	background: #ededed;
+	overflow-y: scroll;
+	border-bottom: 10px solid #75b430;
+	padding-bottom: 20px;
 }
 
-header {
+.container {
+	width: $page_width;
+	margin: auto;
+}
+
+body > header {
+	background: url(/assets/bg_header.jpg) repeat-x;
+	height: 141px;
+	margin-bottom: 57px;
+
 	ul.menu {
+		text-align: center;
+
 		& > li {
+			font-size: 19px;
+			display: inline-block;
+			position: relative;
+			line-height: 21px;
+			top: -35px;
+			width: 113px;
+
+			&:nth-of-type(1), &:nth-of-type(5) {
+				width: 100px;
+			}
+
+			a {
+				width: 100%;
+				text-decoration: none;
+				display: inline-block;
+			}
+
+			& > a {
+				color: #242625;
+				&:hover {
+					color: white;
+					background: #75b430;
+				}
+			}
+
+			&.selected {
+				a {
+					color: white;
+					background: #75b430;
+				}
+			}
 
 			&:first-child, &:nth-child(2), &:nth-child(3) {
-				float: right;
+				
 			}
 			&:last-child, &:nth-last-child(2), &:nth-last-child(3) {
-				float: left;
+			
 			}
 			ul {
 				display: none;
@@ -36,32 +91,206 @@ header {
 			&:hover {
 				ul {
 					display: block;
+					position: absolute;
+					top: 21px; right: 0;
+					width: 100%;
+
+					li {
+						font-size: 17px;
+						width: 100%;
+
+						a {
+							background: #75b430;
+							color: white;
+							width: 100%;
+
+							&:hover {
+								background: #ededed;
+								color: #242625;
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 
 	#logo {
-		margin: auto;
+		margin: 0 40px;
 		display: inline-block;
+		width: 238px; height: 110px;
+		background: url(/assets/logo.jpg) no-repeat;
+	}
+
+	.languages {
+		width: 316px; height: 20px;
+		background: #ededed;
+		position: absolute;
+		top: 124px;
+		right: 50%;
+		margin-right: -158px;
 	}
 }
 
 
+/** Breadcrumbs */
+.bread_crumbs {
+	width: $page_width;
+	margin: auto;
+	height: 29px;
+	margin-bottom: 27px;
 
-/****** Fonts *************/
-@font-face {
-	font-family: 'MPR'; 
-	src:url('http://www.appleseeds.org.il/fonts/MeodedPashut_OERegular.ttf') format("truetype"); 
-	src: url('http://www.appleseeds.org.il/fonts/meodedpashut_oeregular-webfont.eot'); 
-	src: local('MeodedPashut_OE'), local('MeodedPashutOERegular'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oeregular-webfont.woff') format('woff'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oeregular-webfont.svg#webfont4Amd3DHq') format('svg'); 
-	font-weight: normal; font-style: normal;
+	&:before {
+		content: ' ';
+		background: url(/assets/astrix_green.png) no-repeat;
+		width: 26px; height: 25px;
+		display: inline-block;
+		float: right;
+		margin-left: 12px;
+	}
+	a {		
+		line-height: 29px;
+		float: right;
+		font-size: 28px;
+		color: #242625;
+		text-decoration: none;
+
+		&:not(:last-child) {
+			&:after {
+				content: '/';
+				color: #C4C4C4;
+				margin: 0 5px;
+				font-weight: bold;
+			}
+		}
+	}
 }
-@font-face {font-family: 'MPL'; src: url('http://www.appleseeds.org.il/fonts/meodedpashut_oelight-webfont.eot'); src: local('MeodedPashut_OE'), local('MeodedPashutOELight'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oelight-webfont.woff') format('woff'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oelight-webfont.svg#webfontmdLFVb5l') format('svg'); font-weight: normal; font-style: normal;}
-@font-face {font-family: 'MPB'; src: url('http://www.appleseeds.org.il/fonts/MeodedPashut_OEBold.ttf') format("truetype"); src: url('http://www.appleseeds.org.il/fonts/meodedpashut_oebold-webfont.eot'); src: local('MeodedPashut_OE'), local('MeodedPashutOEBold'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oebold-webfont.woff') format('woff'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oebold-webfont.svg#webfontSC9Su31c') format('svg'); font-weight: bold; font-style: normal;}
-
-@font-face {font-family: 'DR'; src: url('http://www.appleseeds.org.il/fonts/Gudea-Regular.otf') format("truetype"); font-weight: normal; font-style: normal;}
-@font-face {font-family: 'DI'; src: url('http://www.appleseeds.org.il/fonts/Gudea-Italic.otf') format("truetype"); font-weight: normal; font-style: normal;}
-@font-face {font-family: 'DB'; src: url('http://www.appleseeds.org.il/fonts/Gudea-Bold.otf') format("truetype"); font-weight: bold; font-style: normal;}
 
 
+/**** Text and image ****/
+.text_and_image, .list_of_pages {
+	.content {
+		float: right;
+		width: 572px;
+		background: #F4F4F4;
+		@include box-sizing(border-box);
+		padding: 30px 20px;
+		color: #242625;
+		line-height: 140%;
+
+		h1 {
+			font-size: 24px;
+			margin-bottom: 7px;
+			font-family: 'MPB';
+		}
+
+		strong {
+			font-family: 'MPB';
+		}
+	}
+	.image {
+		float: right;
+		padding: 22px;
+		background: #F4F4F4;
+		margin-left: 20px;
+
+		img {
+			border: 6px solid #242625;			
+			width: 336px;
+			height: 249px;
+		}
+	}
+}
+
+/*** List of pages ****/
+.list_of_pages {
+	article {
+		margin-bottom: 20px;
+	}
+	.content {
+		width: 670px;
+
+		.text {
+			height: 160px;
+			overflow: hidden;
+		}
+	}
+	.image {
+		img {
+			width: 238px;
+			height: 176px;
+		}
+	}
+}
+
+
+/****** Homepage ******/
+#slider {
+	width: 915px;
+	height: 460px;
+	background: white;
+	margin: auto;
+	position: relative;
+	border-bottom: 5px solid #e6451a;
+
+	header {
+		font-size: 28px;
+		text-align: center;
+		line-height: 34px;
+		margin-top: 3px;
+	}
+
+	img {
+		width: 828px;
+		height: 373px;
+		border: 10px solid #242625;
+		display: block;
+		margin: auto;
+	}
+
+	.bjqs-prev {
+		position: absolute;
+		top: 100px; right: -20px;
+	}
+	.bjqs-next {
+		position: absolute;
+		top: 100px; left: -20px;
+	}
+	.bjqs-markers {
+		position: relative;
+		top: -29px;
+		direction: ltr;
+
+		li {
+			a {
+				font-size: 18px;
+				color: #242625;
+				text-decoration: none;
+			}
+
+			&:not(:last-child) {
+				&:after {
+					content: '|';
+					font-size: 14px;
+					color: #e75027;
+					margin: 0 5px;
+				}
+			}
+
+			&.active-marker {
+				a {
+					position: relative;
+					&:after {
+						content: ' ';
+						width: 6px;
+						border-bottom: 2px solid #e75027;
+						position: absolute;
+						bottom: -3px;
+						right: 50%;
+						margin-right: -3px;
+					}
+				}
+			}
+		}
+	}
+}

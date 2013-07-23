@@ -1,0 +1,15 @@
+
+/****** Fonts *************/
+@font-face {
+	font-family: 'MPR'; 
+	src:url('http://www.appleseeds.org.il/fonts/MeodedPashut_OERegular.ttf') format("truetype"); 
+	src: url('http://www.appleseeds.org.il/fonts/meodedpashut_oeregular-webfont.eot'); 
+	src: local('MeodedPashut_OE'), local('MeodedPashutOERegular'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oeregular-webfont.woff') format('woff'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oeregular-webfont.svg#webfont4Amd3DHq') format('svg'); 
+	font-weight: normal; font-style: normal;
+}
+@font-face {font-family: 'MPL'; src: url('http://www.appleseeds.org.il/fonts/meodedpashut_oelight-webfont.eot'); src: local('MeodedPashut_OE'), local('MeodedPashutOELight'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oelight-webfont.woff') format('woff'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oelight-webfont.svg#webfontmdLFVb5l') format('svg'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'MPB'; src: url('http://www.appleseeds.org.il/fonts/MeodedPashut_OEBold.ttf') format("truetype"); src: url('http://www.appleseeds.org.il/fonts/meodedpashut_oebold-webfont.eot'); src: local('MeodedPashut_OE'), local('MeodedPashutOEBold'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oebold-webfont.woff') format('woff'), url('http://www.appleseeds.org.il/fonts/meodedpashut_oebold-webfont.svg#webfontSC9Su31c') format('svg'); font-weight: bold; font-style: normal;}
+
+@font-face {font-family: 'DR'; src: url('http://www.appleseeds.org.il/fonts/Gudea-Regular.otf') format("truetype"); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'DI'; src: url('http://www.appleseeds.org.il/fonts/Gudea-Italic.otf') format("truetype"); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'DB'; src: url('http://www.appleseeds.org.il/fonts/Gudea-Bold.otf') format("truetype"); font-weight: bold; font-style: normal;}

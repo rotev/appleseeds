@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require active_scaffold
+//= require tinymce-jquery
 //= require_tree .

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711235701) do
+ActiveRecord::Schema.define(:version => 20130712171833) do
 
   create_table "add_section_to_pages", :force => true do |t|
     t.integer  "section_id"
@@ -54,21 +54,30 @@ ActiveRecord::Schema.define(:version => 20130711235701) do
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "parent_page_id"
     t.integer  "section_id"
     t.boolean  "is_home"
     t.integer  "page_template_id"
     t.string   "slug"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "page_id",            :default => -1
+    t.string   "subtitle",           :default => ""
   end
 
   create_table "sections", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-    t.boolean  "show_in_main_menu", :default => true
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.boolean  "show_in_main_menu",       :default => true
     t.string   "slug"
+    t.boolean  "show_pages_in_main_menu"
+    t.integer  "page_template"
+    t.integer  "page_template_id"
   end
 
 end

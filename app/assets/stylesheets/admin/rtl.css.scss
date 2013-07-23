@@ -1,0 +1,53 @@
+
+
+body {
+	direction: rtl;
+}
+
+.active-scaffold {
+	th {
+		text-align: right;
+	}
+
+	a.inline-adapter-close {
+		float: left;
+	}
+
+	li.form-element {
+		dt {
+			float: right;
+		}
+		dd {
+			float: right;
+		}
+	}
+
+	.filtered-message {
+		.reset {
+			right: auto;
+			left: 10px;
+		}
+	}
+
+	.active-scaffold {
+		.active-scaffold-header {					
+			margin-right: 0;
+			margin-left: 25px;
+		}
+	}
+}
+
+.active-scaffold-header {
+	div.actions {
+		float: left;
+
+		a {
+			float: left;
+		}
+	}
+}
+
+.active-scaffold-found {
+	float: right;
+}
+

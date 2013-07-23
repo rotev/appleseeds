@@ -1,3 +1,10 @@
-.bread_crumbs
-	= link_to @section.name, section_path(@section)
-	= link_to @page.title, page_path(@section, @page)
+
+= render partial: 'bread_crumbs'
+
+.image
+	= image_tag @page.image.url()
+
+.content
+	%h1= @page.title
+	- unless @page.text.nil?
+		= @page.text.html_safe

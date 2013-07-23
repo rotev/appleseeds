@@ -6,30 +6,33 @@ class SiteController < ApplicationController
 		# find home page
 		@page = Page.where('is_home=?', true).first
 
-		render "page_templates/#{@page.page_template.slug}"
+		render_template
 	end
 
 	def page
 		@section = Section.find_by_slug(params[:section])
-		@page = @section.pages.find_by_slug(params[:page])
-		@template = @page.page_template
+		#@page = @section.pages.find_by_slug(params[:page])
+		@page = Page.find_by_slug(params[:page])
 
-		if @template.nil?
-			@template = PageTemplate.default
-		end
-
-		render "page_templates/#{@template.slug}"
+		render_template
 	end
 
 	def section
 		@section = Section.find_by_slug(params[:section])
-		@page = @section.pages.first
+		@template = @section.page_template
 
-		if @page
-			redirect_to page_path(@section, @page)
+		if @template.nil? || @template.slug == "redirect_to_first_page"
+			@page = @section.pages.first
+			if @page
+				redirect_to page_path(@section, @page)
+			else
+				@template = PageTemplate.default
+				render "page_templates/empty_section"
+			end
 		else
-			render "page_templates/empty_section"
+			render "page_templates/#{@template.slug}"
 		end
+
 	end
 
 
@@ -38,5 +41,15 @@ class SiteController < ApplicationController
   def resolve_layout
   	"site"
   end
+
+	def render_template		
+		@template = @page.page_template
+
+		if @template.nil?
+			@template = PageTemplate.default
+		end
+		
+		render "page_templates/#{@template.slug}"
+	end
 
 end

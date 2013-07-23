@@ -5,7 +5,13 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+end
 
 gem "paperclip"
 gem 'aws-sdk' # Amazon S3 for paperclip on heroku
@@ -27,7 +33,7 @@ end
 gem 'jquery-rails'
 
 gem 'active_scaffold'
-
+gem 'tinymce-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

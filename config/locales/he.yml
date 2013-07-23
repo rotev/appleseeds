@@ -216,10 +216,23 @@ he:
       section:
         name: שם
         pages: עמודים
+        show_in_main_menu: הצג בתפריט הראשי
+        show_pages_in_main_menu: הצג עמודים בתפריט הראשי
+        slug: כתובת
+        section_type: סוג
+        page_template: תבנית
+        page_template_id: תבנית
       page:
         title: כותרת
         text: טקסט
-        page_template: טמפלייט
+        page_template: תבנית
+        page_template_id: תבנית
+        slug: כתובת
+        image: תמונה
+        components_lists: 
+          one: רשימת רכיבים
+          other: רשימות רכיבים
+        is_home: עמוד הבית?
 
     errors:
       <<: *errors
@@ -231,9 +244,9 @@ he:
     add_existing_model: Add Existing %{model}
     apply: Apply
     are_you_sure_to_delete: Are you sure you want to delete %{label}?
-    cancel: Cancel
+    cancel: ביטול
     click_to_edit: Click to edit
-    click_to_reset: Click to reset
+    click_to_reset: לחץ לביטול הפילטור
     close: Close
     config_list: Configure
     config_list_model: Configure Columns for %{model}
@@ -253,7 +266,9 @@ he:
     nested_of_model: ! '%{nested_model} of %{parent_model}'
     'false': 'False'
     filtered: (Filtered)
-    found: נמצאו
+    found: 
+      one: נמצא
+      other: נמצאו
     hide: Hide
     inplace_edit_handle: --
     live_search: Live Search
@@ -276,7 +291,7 @@ he:
     replace_existing: Replace Existing
     replace_with_new: Replace With New
     revisions_for_model: Revisions for %{model}
-    reset: Reset
+    reset: ביטול פילטר חיפוש
     saving: Saving…
     search: חיפוש
     search_terms: Search Terms
@@ -285,8 +300,8 @@ he:
     show_model: Show %{model}
     _to_: ! ' to '
     'true': 'True'
-    update: Update
-    update_model: Update %{model}
+    update: עריכה
+    update_model: עריכת %{model}
     updated_model: Updated %{model}
     =: =
     ! '>=': ! '>='
