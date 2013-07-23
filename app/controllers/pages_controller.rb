@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     conf.columns.exclude :created_at, :updated_at, :sub_pages, :parent_page, :components_lists
 
     conf.columns[:image].form_ui = :paperclip
-    conf.columns[:text].form_ui = :text_editor
+    #conf.columns[:text].form_ui = :text_editor
    #  conf.columns[:text].options = {
 	  #   tinymce: { 
 	  #     theme: 'advanced'
