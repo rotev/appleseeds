@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.2'
+ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 
@@ -8,7 +8,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-	gem 'sqlite3'
+	#gem 'sqlite3'
+	gem 'pg'
 end
 
 group :production do
