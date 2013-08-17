@@ -4,6 +4,8 @@ ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 
+gem 'thin'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -20,9 +22,9 @@ end
 gem "paperclip"
 gem 'aws-sdk' # Amazon S3 for paperclip on heroku
 
-gem 'jquery-rails'
+gem 'jquery-rails', "2.3.0"
 
-gem 'active_scaffold'
+gem 'activeadmin'
 #gem 'tinymce-rails' # making the assets precompile run forever.
 
 # Gems used only for assets and not required

@@ -2,7 +2,7 @@ class PageTemplate < ActiveRecord::Base
 	has_many :pages
 	has_many :sections
 
-  attr_accessible :name
+  attr_accessible :name, :slug, :default
 
   def self.default
   	find_by_default(true)
