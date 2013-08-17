@@ -4,7 +4,8 @@ class Section < ActiveRecord::Base
 
 	belongs_to :page_template
 
-  attr_accessible :name
+  attr_accessible :name, :page_template_id
+  attr_accessible :show_pages_in_main_menu, :show_in_main_menu
 
   before_save :update_slug
 
