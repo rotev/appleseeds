@@ -10,7 +10,7 @@ class Page < ActiveRecord::Base
   
   has_attached_file :image
 
-  attr_accessible :text, :title, :page_template_id, :parent_page_id
+  attr_accessible :text, :title, :page_template_id, :parent_page_id, :is_home
 
   before_save :update_slug
 

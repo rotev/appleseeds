@@ -1,16 +1,17 @@
 - slider = @page.components_lists.find_by_slug('slider')
 
-#slider
-	%ul.bjqs
-		- slider.components.each do |component|
-			%li
-				%header= component.title
+- if slider
+	#slider
+		%ul.bjqs
+			- slider.components.each do |component|
+				%li
+					%header= component.title
 
-				- if component.url
-					= link_to component.url do
+					- if component.url
+						= link_to component.url do
+							= image_tag component.image.url()
+					- else
 						= image_tag component.image.url()
-				- else
-					= image_tag component.image.url()
 
 
 - magazine = Section.find_by_slug('מגזין')
