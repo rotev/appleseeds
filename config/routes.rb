@@ -1,4 +1,4 @@
-Dev::Application.routes.draw do
+AppleSeeds::Application.routes.draw do
 
   # resources :pages do 
   #     resources :components_lists do 

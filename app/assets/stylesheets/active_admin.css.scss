@@ -27,3 +27,106 @@
 // .active_admin       applies to any Active Admin namespace
 // .admin_namespace    applies to the admin namespace (eg: /admin)
 // .other_namespace    applies to a custom namespace named other (eg: /other)
+
+
+// Make RTL
+body.active_admin {
+	direction: rtl;
+
+	#header {
+		h1 {
+			float: right;
+			margin-right: 0;
+			margin-left: 20px;
+		}
+		.header-item {
+			float: right;
+		}
+		#utility_nav {
+			float: left;
+		}
+	}
+
+	#title_bar {
+		#titlebar_right {
+			text-align: left;
+		}
+	}
+
+	#active_admin_content {
+		#sidebar {
+			float: right;
+			margin-left: 0;
+			margin-right: -270px;
+		}
+
+		#main_content_wrapper  {
+			float: right;
+
+			#main_content {
+				margin-right: 0;
+				margin-left: 300px;
+			}
+		}
+	}
+
+	table.index_table {
+		th {
+			text-align: right;
+		}
+	}
+
+	td {
+		text-align: right;
+	}
+
+	form {
+		.buttons, .actions {
+			input[type=submit] {
+				margin-right: 0;
+				margin-left: 10px;
+			}
+		}
+
+		fieldset {
+			ol > li {
+				label {
+					float: right;
+				}
+
+				&.boolean {
+					label {
+						padding-right: 20%;
+						padding-left: 10px;
+					}
+				}
+
+				p.inline-hints {
+					margin: 0.5em 20% 0 0
+				}
+			}
+		}
+
+		fieldset.actions {
+			li {
+				float: right;
+			}
+			li.cancel a {
+				margin-right: 0;
+				margin-left: 3px;
+			}
+		}
+
+		.html_editor {
+			.wrap {
+				float: right;
+			}
+		}
+	}
+
+	.section.formtastic {
+		background: transparent;
+		@include box-shadow(none);
+	}
+}
+

@@ -33,5 +33,6 @@ ActiveAdmin.register Section do
       f.inputs "כותרת" do
         f.input :name
       end
+      f.actions
     end
 end

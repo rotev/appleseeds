@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Dev::Application.load_tasks
+AppleSeeds::Application.load_tasks
