@@ -1,5 +1,7 @@
 class Page < ActiveRecord::Base
 
+  default_scope order('position ASC')
+
 	belongs_to :section
 	belongs_to :page_template
 

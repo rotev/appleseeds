@@ -1,5 +1,7 @@
 class Section < ActiveRecord::Base
 
+  default_scope order('position ASC')
+
 	has_many :pages
 
 	belongs_to :page_template

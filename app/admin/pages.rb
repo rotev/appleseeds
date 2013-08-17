@@ -1,6 +1,19 @@
 # encoding: UTF-8
 
 ActiveAdmin.register Page do  
+
+    config.sort_order = 'position_asc'
+
+    # This action is called by javascript when you drag and drop a column
+    # It iterates through the collection and sets the new position based on the
+    # order that jQuery submitted them
+    collection_action :sort, :method => :post do
+        params[:page].each_with_index do |id, index|
+            Page.update_all(['position=?', index+1], ['id=?', id])
+        end
+        render :nothing => true
+    end
+
     controller do
         defaults :finder => :find_by_slug
     end

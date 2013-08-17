@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130817115655) do
+ActiveRecord::Schema.define(:version => 20130817181830) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130817115655) do
     t.datetime "image_updated_at"
     t.integer  "page_id",            :default => -1
     t.string   "subtitle",           :default => ""
+    t.integer  "position"
   end
 
   create_table "sections", :force => true do |t|
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20130817115655) do
     t.boolean  "show_pages_in_main_menu"
     t.integer  "page_template"
     t.integer  "page_template_id"
+    t.integer  "position"
   end
 
 end
