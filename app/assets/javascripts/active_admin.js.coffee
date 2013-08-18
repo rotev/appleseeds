@@ -10,22 +10,16 @@ sendSortRequestOfModel = (model_name) ->
     dataType: 'script'
     url: '/admin/' + model_name + '/sort'
 
+initSortableForModel = (model_name) ->
+  if $('body.admin_' + model_name + '.index').length
+    $('#index_table_' + model_name + ' tbody').disableSelection()
+    $('#index_table_' + model_name + ' tbody').sortable
+      axis: 'y'
+      cursor: 'move'
+      update: (event, ui) ->
+        sendSortRequestOfModel(model_name)
+
 jQuery ($) ->
-  # sortable sections
-  if $('body.admin_sections.index').length
-    $("#index_table_sections tbody").disableSelection()
-    $("#index_table_sections tbody").sortable
-      axis: 'y'
-      cursor: 'move'
-      update: (event, ui) ->
-        sendSortRequestOfModel("sections")
 
-  # sortable pages
-  if $('body.admin_pages.index').length
-    $("#index_table_pages tbody").disableSelection()
-    $("#index_table_pages tbody").sortable
-      axis: 'y'
-      cursor: 'move'
-      update: (event, ui) ->
-        sendSortRequestOfModel("pages")
-
+  for model_name in ["sections", "pages", "components_lists", "components"]
+    initSortableForModel(model_name)

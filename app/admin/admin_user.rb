@@ -1,4 +1,9 @@
+# encoding: UTF-8
+
 ActiveAdmin.register AdminUser do     
+
+  menu :parent => "ניהול"
+
   index do                            
     column :email                     
     column :current_sign_in_at        

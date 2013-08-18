@@ -211,6 +211,9 @@ he:
       components_list:
         one: רשימת רכיבים
         other: רשימות רכיבים
+      page_template:
+        one: תבנית תצוגה
+        other: תבניות תצוגה
 
     attributes:
       section:
@@ -224,6 +227,7 @@ he:
         page_template_id: תבנית
       page:
         title: כותרת
+        subtitle: תת כותרת
         text: טקסט
         page_template: תבנית
         page_template_id: תבנית
@@ -233,6 +237,24 @@ he:
           one: רשימת רכיבים
           other: רשימות רכיבים
         is_home: עמוד הבית?
+        created_at: נוצר ב-
+        updated_at: עודכן ב-
+
+      page_template:
+        id: מזהה
+        name: שם
+        created_at: נוצר ב-
+        updated_at: עודכן ב-
+        slug: כתובת
+        default: ברירת מחדל?
+
+      component:
+        components_list: שייך לרשימת רכיבים-
+        title: כותרת
+        subtitle: תת כותרת
+        short_description: תאור קצר
+        description: תאור מלא
+        url: קישור
 
     errors:
       <<: *errors

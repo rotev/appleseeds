@@ -4,6 +4,11 @@ ActiveAdmin.register Page do
 
     config.sort_order = 'position_asc'
 
+    menu :parent => "ניהול"
+
+    #preserve_default_filters!
+    filter :section, collection: proc { Section.order('position ASC') }
+
     # This action is called by javascript when you drag and drop a column
     # It iterates through the collection and sets the new position based on the
     # order that jQuery submitted them
@@ -19,11 +24,17 @@ ActiveAdmin.register Page do
     end
 
     index do
+        selectable_column
     	column :id
-    	column :title
+        column :image do |page|
+            image_tag page.image.url(:small)
+        end
+    	column :title do |page|
+            link_to page.title, admin_page_path(page)
+        end
     	column :subtitle
     	#column :slug
-    	column :is_home
+    	bool_column :is_home
     	#column :created_at
     	#column :updated_at
     	default_actions
@@ -35,10 +46,33 @@ ActiveAdmin.register Page do
 	    	row :title
 	    	row :subtitle
 	    	#column :slug
-	    	row :is_home
+	    	bool_row :is_home
 	    	row :created_at
 	    	row :updated_at
 	    end
+
+        if page.text
+            panel "תוכן" do
+                div page.text.html_safe
+            end
+        end
+
+        sub_pages = page.sub_pages
+        if sub_pages.count > 0
+            panel "תתי עמודים" do
+                render partial: "sub_pages", locals: { pages: page.sub_pages }
+            end
+        end
+
+        if page.components_lists.count > 0
+            panel "רשימות רכיבים" do
+                table_for page.components_lists do
+                  column "" do |list|
+                    link_to list.name, admin_components_list_path(list)
+                  end
+                end            
+            end
+        end
     end
 
     form do |f|

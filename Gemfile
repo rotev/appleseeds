@@ -25,6 +25,8 @@ gem 'aws-sdk' # Amazon S3 for paperclip on heroku
 gem 'jquery-rails', "2.3.0"
 
 gem 'activeadmin'
+#gem 'sass-rails'
+gem "meta_search",    '>= 1.1.0.pre'
 gem 'active_admin_editor'
 #gem 'tinymce-rails' # making the assets precompile run forever.
 

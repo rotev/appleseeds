@@ -10,6 +10,7 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+@import "compass";
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
@@ -29,9 +30,39 @@
 // .other_namespace    applies to a custom namespace named other (eg: /other)
 
 
+
+.clearfix {
+	@include clearfix;
+}
+
+.list_with_image {
+	article {
+		&:not(:last-child) {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
+		.image {
+			width: 60px; height: 60px;
+			img { width: 60px; }
+			margin-left: 20px;
+			float: right;
+		}
+		.content {
+			max-height: 200px;
+			overflow: auto;
+		}
+	}
+}
+
 // Make RTL
 body.active_admin {
 	direction: rtl;
+	text-align: right;
+
+	th {
+		text-align: right;
+	}
 
 	#header {
 		h1 {
@@ -44,6 +75,12 @@ body.active_admin {
 		}
 		#utility_nav {
 			float: left;
+		}
+
+		ul.tabs {
+			&>li ul {
+				@include border-radius(10px 0 10px 10px);
+			}
 		}
 	}
 
